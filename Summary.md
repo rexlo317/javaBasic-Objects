@@ -1,2 +1,5 @@
-No time to finish those question, i only finished the code,
-Dont know how to do InheritanceTest should_write_perfect_equals_2 & 3
+StringTest:
+1. to know Object, we can find the document from oracle webpage/java api page.
+2. because no answer/wrong answer is provided, 
+3. 
+4. no 
