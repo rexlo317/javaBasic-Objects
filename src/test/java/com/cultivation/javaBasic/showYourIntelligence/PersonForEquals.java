@@ -2,12 +2,14 @@ package com.cultivation.javaBasic.showYourIntelligence;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import javax.jnlp.PersistenceService;
 import java.util.Objects;
 
 @SuppressWarnings("unused")
 public class PersonForEquals {
     private final String name;
     private final short yearOfBirth;
+    private PersonForEquals obj;
 
     public PersonForEquals(String name, short yearOfBirth) {
         if (name == null) {
@@ -33,11 +35,20 @@ public class PersonForEquals {
 
     @SuppressWarnings("Contract")
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals (Object obj) {
         // TODO: please modify the following code to pass the test
         // <--start
-        if (this == obj)
-            return true;
+        if (obj != null) {
+            if (!PersonForEquals.class.isAssignableFrom(obj.getClass())) {
+                return false;
+            }
+            PersonForEquals another = (PersonForEquals) obj;
+            if (another.getName() != null && another.getYearOfBirth() != 0 &&
+                    another.getName() == this.name && another.getYearOfBirth() == this.yearOfBirth)
+                return true;
+            else
+                return false;
+        }
         else
             return false;
         //throw new NotImplementedException();
